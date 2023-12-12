@@ -42,7 +42,8 @@
     "test:ios": "cd ios && xcodebuild -workspace RNKlarnaMobileSDK.xcworkspace -scheme RNKlarnaMobileSDK -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' test",
     "build:android": "cd TestApp/android && ./gradlew assembleDebug --no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a",
     "build:ios": "cd TestApp/ios && xcodebuild -workspace TestApp.xcworkspace -scheme TestApp -configuration Debug -sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO",
-    "TestApp": "yarn --cwd TestApp"
+    "TestApp": "yarn --cwd TestApp",
+    "postinstall": "tsc --outDir ./build"
   },
   "keywords": [
     "react-native",
